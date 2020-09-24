@@ -1,0 +1,107 @@
+.header {
+  .overlay {
+    z-index: 100;
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 4rem;
+    bottom: 0;
+    background-image: linear-gradient($darkbleu, transparent);
+    .header__mobile__menu {
+      visibility: hidden;
+      flex-direction: column;
+      position: relative;
+      margin: 1.25rem auto;
+      padding: 3rem 0;
+      width: 80%;
+      height: 300px;
+      background: $VeryLightGray;
+      border-radius: 5px;
+      a {
+        display: block;
+        padding: 10px 0;
+        color: $GrayishBlue;
+        cursor: pointer;
+        &:hover {
+          color: $darkbleu;
+          transition: color 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+
+  //hamberger open menu
+  &.open {
+    .overlay {
+      position: fixed;
+      display: block;
+    }
+    .header__menu {
+      > span:first-child {
+        transform: rotate(45deg);
+      }
+      span:nth-child(2) {
+        opacity: 0;
+      }
+      > span:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  nav {
+    width: 100%;
+    padding: 17px 24px;
+  }
+  &__logo {
+    padding-top: 8px;
+  }
+  &__menu {
+    //mobile menu
+    span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background-color: $darkbleu;
+      transform-origin: 3px 1px;
+      transition: all 0.3s ease-in-out;
+      &:not(:last-child) {
+        margin: 5px 0;
+      }
+    }
+  }
+
+  &__links {
+    a {
+      color: $GrayishBlue;
+      font-size: $font-sm;
+      font-weight: 300;
+      position: relative;
+      &:not(:last-child) {
+        margin-right: 32px;
+      }
+      &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 3px;
+        left: 0;
+        bottom: -26px;
+        background-image: linear-gradient(
+          to right,
+          $LimeGreen 0%,
+          $BrightCyan 100%
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+      }
+      &:hover {
+        color: $darkbleu;
+        transition: color 0.3s ease-in-out;
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

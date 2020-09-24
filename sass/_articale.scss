@@ -1,0 +1,107 @@
+.article {
+  background-color: $VeryLightGray;
+  padding: 4rem 0;
+  &__container {
+    width: 85%;
+    margin: auto;
+    overflow: hidden;
+    .article__title h2 {
+      color: $darkbleu;
+      font-size: 2rem !important;
+      font-weight: 400;
+      text-align: center;
+      margin: 2rem 0;
+      @include breakpoint-up(large) {
+        font-size: 2.5rem !important;
+      }
+    }
+    .artical__flex {
+      @include breakpoint-up(medium) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      a {
+        @include breakpoint-up(medium) {
+          width: 48%;
+        }
+        @include breakpoint-up(large) {
+          width: 24%;
+        }
+      }
+    }
+    .article__blog {
+      width: 100%;
+      height: 420px;
+      background-color: white;
+      overflow: hidden;
+      border-radius: 3px;
+      margin: 2rem 0;
+      @include breakpoint-up(medium) {
+        width: 100%;
+      }
+      &:hover {
+        box-shadow: 2px 2px 10px rgb(218, 218, 218);
+      }
+      .article__image {
+        width: 100%;
+        height: 45%;
+        background-image: url("../images/image-currency.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+      .two {
+        width: 100%;
+        height: 45%;
+        background-image: url("../images/image-restaurant.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+      .three {
+        width: 100%;
+        height: 45%;
+        background-image: url("../images/image-plane.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .foor {
+        width: 100%;
+        height: 45%;
+        background-image: url("../images/image-confetti.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+      .article__content {
+        margin: 2rem;
+        @include breakpoint-up(medium) {
+          margin: 1.2rem 2rem;
+        }
+        .article__author {
+          font-size: 0.7rem;
+          font-weight: 300;
+          color: $GrayishBlue;
+        }
+        h3 {
+          font-size: 1rem;
+          font-weight: 400;
+          padding-top: 1rem;
+          color: $darkbleu;
+        }
+        p {
+          color: $GrayishBlue;
+          font-size: 0.85rem;
+          line-height: 1.5;
+          font-weight: 400;
+          @include breakpoint-up(medium) {
+            //font-size: 0.7rem;
+          }
+        }
+      }
+    }
+  }
+}
